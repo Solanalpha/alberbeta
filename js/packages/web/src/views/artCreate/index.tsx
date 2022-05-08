@@ -247,19 +247,6 @@ const CategoryStep = (props: {
   const { width } = useWindowDimensions();
   return (
     <>
-      <Row className="call-to-action">
-        <h2>Create a new item</h2>
-        <p>
-          First time creating on Metaplex?{' '}
-          <a
-            href="https://docs.metaplex.com/storefront/create"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Read our creators’ guide.
-          </a>
-        </p>
-      </Row>
       <Row justify={width < 768 ? 'center' : 'start'}>
         <Col>
           <Row>
@@ -1323,13 +1310,13 @@ const Congrats = (props: {
 
   const newTweetURL = () => {
     const params = {
-      text: "I've created a new NFT artwork on Metaplex, check it out!",
+      text: 'we  created a new Auction/Raffle on Spellia, check it out!',
       url: `${
         window.location.origin
       }/#/art/${props.nft?.metadataAccount.toString()}`,
-      hashtags: 'NFT,Crypto,Metaplex',
+      hashtags: 'NFT,Crypto,Aldermages',
       // via: "Metaplex",
-      related: 'Metaplex,Solana',
+      related: 'Aldermages,Solana',
     };
     const queryParams = new URLSearchParams(params).toString();
     return `https://twitter.com/intent/tweet?${queryParams}`;
@@ -1342,7 +1329,7 @@ const Congrats = (props: {
         <div className="waiting-title">Sorry, there was an error!</div>
         <p>{props.alert}</p>
         <Button onClick={() => history.push('/art/create')}>
-          Back to Create NFT
+          Back to Create
         </Button>
       </>
     );
@@ -1350,7 +1337,7 @@ const Congrats = (props: {
 
   return (
     <>
-      <div className="waiting-title">Congratulations, you created an NFT!</div>
+      <div className="waiting-title">share It!</div>
       <div className="congrats-button-container">
         <Button
           className="metaplex-button"
@@ -1365,7 +1352,7 @@ const Congrats = (props: {
             history.push(`/art/${props.nft?.metadataAccount.toString()}`)
           }
         >
-          <span>See it in your collection</span>
+          <span>See it </span>
           <span>&gt;</span>
         </Button>
         <Button

@@ -706,10 +706,7 @@ const CategoryStep = (props: {
   return (
     <>
       <Row className="call-to-action">
-        <h2>List an item</h2>
-        <p>
-          First time listing on Metaplex? <a>Read our sellers&apos; guide.</a>
-        </p>
+        <h2>Create</h2>
       </Row>
       <Row justify={width < 768 ? 'center' : 'start'}>
         <Col>
@@ -720,56 +717,12 @@ const CategoryStep = (props: {
               onClick={() => props.confirm(AuctionCategory.InstantSale)}
             >
               <div>
-                <div>Instant Sale</div>
-                <div className="type-btn-description">
-                  At a fixed price, sell a single Master NFT or copies of it
-                </div>
+                <div>Create Raffle</div>
+                <div className="type-btn-description">Create raffle</div>
               </div>
             </Button>
           </Row>
-          <Row>
-            <Button
-              className="type-btn"
-              size="large"
-              onClick={() => props.confirm(AuctionCategory.Limited)}
-            >
-              <div>
-                <div>Limited Edition</div>
-                <div className="type-btn-description">
-                  Sell a limited copy or copies of a single Master NFT
-                </div>
-              </div>
-            </Button>
-          </Row>
-          <Row>
-            <Button
-              className="type-btn"
-              size="large"
-              onClick={() => props.confirm(AuctionCategory.Open)}
-            >
-              <div>
-                <div>Open Edition</div>
-                <div className="type-btn-description">
-                  Sell unlimited copies of a single Master NFT
-                </div>
-              </div>
-            </Button>
-          </Row>
-          <Row>
-            <Button
-              className="type-btn"
-              size="large"
-              onClick={() => props.confirm(AuctionCategory.Tiered)}
-            >
-              <div>
-                <div>Tiered Auction</div>
-                <div className="type-btn-description">
-                  Participants get unique rewards based on their leaderboard
-                  rank
-                </div>
-              </div>
-            </Button>
-          </Row>
+
           <Row>
             <Button
               className="type-btn"
@@ -777,11 +730,8 @@ const CategoryStep = (props: {
               onClick={() => props.confirm(AuctionCategory.Single)}
             >
               <div>
-                <div>Sell an Existing Item</div>
-                <div className="type-btn-description">
-                  Sell an existing item in your NFT collection, including Master
-                  NFTs
-                </div>
+                <div>Create Auction</div>
+                <div className="type-btn-description">Create Auction</div>
               </div>
             </Button>
           </Row>
@@ -840,7 +790,7 @@ const InstantSaleStep = ({
   return (
     <>
       <Row className="call-to-action" style={{ marginBottom: 0 }}>
-        <h2>Select which item to sell:</h2>
+        <h2>Select the item:</h2>
       </Row>
 
       <Row className="content-action">
@@ -2110,7 +2060,7 @@ const WaitingStep = (props: {
     >
       <Progress type="circle" percent={progress} />
       <div className="waiting-title">
-        Your creation is being listed with Metaplex...
+        Your creation is being listed in spellia...
       </div>
       <div className="waiting-subtitle">This can take up to 30 seconds.</div>
     </div>
@@ -2128,13 +2078,13 @@ const Congrats = (props: {
 
   const newTweetURL = () => {
     const params = {
-      text: "I've created a new NFT auction on Metaplex, check it out!",
+      text: "I've created a new NFT auction on Alderauction, check it out!",
       url: `${
         window.location.origin
       }/#/auction/${props.auction?.auction.toString()}`,
-      hashtags: 'NFT,Crypto,Metaplex',
+      hashtags: 'NFT,Crypto,Aldermages',
       // via: "Metaplex",
-      related: 'Metaplex,Solana',
+      related: 'Aldermage,Solana',
     };
     const queryParams = new URLSearchParams(params).toString();
     return `https://twitter.com/intent/tweet?${queryParams}`;
